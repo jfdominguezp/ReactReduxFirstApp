@@ -4,7 +4,11 @@ import VideoListItem from './video_list_item';
 
 const VideoList = (props) => {
   const videoItems= props.videos.map(video => {
-    return <VideoListItem key={video.etag} video={video} />
+    return (
+      <VideoListItem 
+        key={video.etag} 
+        video={video}
+        onVideoSelect={props.onVideoSelect} />);
   });
   return (
     <ul className="col-md-4 list-group">
@@ -14,7 +18,8 @@ const VideoList = (props) => {
 };
 
 VideoList.propTypes = {
-  videos: PropTypes.array
+  videos: PropTypes.array,
+  onVideoSelect: PropTypes.func
 };
 
 export default VideoList;

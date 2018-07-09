@@ -5,4 +5,7 @@ module.exports = {
         "react",
         "import"
     ],
+    "env": {
+        "browser": true
+    }
 };
